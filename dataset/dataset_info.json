@@ -1,0 +1,17 @@
+{
+  "petro_pt": {
+    "file_name": "petro_pt.txt",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "petro_sft": {
+    "file_name": "petro_sft.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "",
+      "response": "output",
+      "history": ""
+    }
+  }
+}
