@@ -20,10 +20,7 @@ PetroGPT是石油行业中文大语言模型。基于160万条石油领域数据
 ## <img src="./docs/images/f1.png" width="20"/> 最新动态
 
 * [2023-12-29] PetroGPT 1.0版本发布，提供高精度石油生成大模型。
-  * 基于xxx模型进行训练，采用xxx方式
-  * 
-
-
+  * 基于Baichuan2-7B-Chat模型，基于石油领域大数据进行LoRA微调
 
 ## <img src="./docs/images/feature.png" width="20"/> 特性
 
@@ -50,12 +47,9 @@ pip install -e .
 
 ```python
 >>> from transformers import AutoTokenizer, AutoModel
->>> tokenizer = AutoTokenizer.from_pretrained("THUDM/chatglm2-6b", trust_remote_code=True)
->>> model = AutoModel.from_pretrained("THUDM/chatglm2-6b", trust_remote_code=True, device='cuda')
+>>> tokenizer = AutoTokenizer.from_pretrained("****/***", trust_remote_code=True)
+>>> model = AutoModel.from_pretrained("****/***", trust_remote_code=True, device='cuda')
 >>> model = model.eval()
->>> response, history = model.chat(tokenizer, "你好", history=[])
->>> print(response)
-你好👋!我是人工智能助手 ChatGLM2-6B,很高兴见到你,欢迎问我任何问题。
 >>> response, history = model.chat(tokenizer, "重质油是什么", history=history)
 >>> print(response)
 " 重质油是一种具有较高密度和粘度的石油产品。它主要由较重的烃类化合物组成，如烷烃、环烷烃和芳香烃等。在石油开采过程中，重质油通常位于原油的底部，其密度和粘度较大，难以通过传统的石油开采技术进行分离和提取。因此，重质油的开发需要采用特殊的工艺和技术，如热裂化、催化裂化和加氢裂化等。
